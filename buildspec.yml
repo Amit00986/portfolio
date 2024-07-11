@@ -3,11 +3,18 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14 # or your preferred Node.js version
+      nodejs: 14
     commands:
-      - npm install
+      - echo "Cleaning node_modules directory..."
+      - rm -rf node_modules
+      - echo "Installing dependencies..."
+      - npm install --force
+      - echo "Listing installed node modules..."
+      - ls -la node_modules/.bin
+      - ls -la node_modules/react-scripts/bin
   build:
     commands:
+      - echo "Build started on `date`"
       - npm run build
 artifacts:
   files:
