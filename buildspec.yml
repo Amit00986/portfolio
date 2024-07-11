@@ -3,10 +3,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14  # Specify the Node.js version your project requires
+      nodejs: 14
     commands:
+      - echo "Cleaning node_modules directory..."
+      - rm -rf node_modules
       - echo "Installing dependencies..."
-      - npm install
+      - npm install --force
       - echo "Listing installed node modules..."
       - ls -la node_modules/.bin
       - ls -la node_modules/react-scripts/bin
