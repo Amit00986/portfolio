@@ -1,19 +1,16 @@
-version: 0.2
-
 phases:
   install:
     runtime-versions:
-      nodejs: 14  # Choose the Node.js version appropriate for your project
+      nodejs: 14  # Adjust to your project's required Node.js version
     commands:
       - echo "Installing dependencies..."
       - npm install
-      - echo "Checking installed node modules..."
-      - ls -la node_modules/.bin
-      - ls -la node_modules/react-scripts/bin
+
   build:
     commands:
-      - echo "Build started on `date`"
+      - echo "Building application..."
       - npm run build
+
 artifacts:
-  files:
-    - '**/*'
+  paths:
+    - build/**  # Include only the build directory
