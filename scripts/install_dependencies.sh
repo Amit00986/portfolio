@@ -11,6 +11,7 @@ echo "Installing dependencies..."
 # Install npm dependencies
 npm install
 
+
 # Check if npm install command was successful
 if [[ $? -ne 0 ]]; then
   echo "Error: npm install failed!"
